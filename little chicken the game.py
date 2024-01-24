@@ -126,3 +126,4 @@ def play():
 play()
 
 #the chicken void
+print*("Your Little Chicken Loves The Chicken Void")
