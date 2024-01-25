@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[pdftex]{graphicx} % Required for inserting images
+\usepackage{amsmath, amssymb, amsthm, float, amsfonts,url,faktor,calrsfs} %making math pretty
+\usepackage{enumerate}%better lists
+\usepackage{extarrows,tikz-cd, xcolor} %diagrams
+\usepackage{expl3} %something about coding? 
+\usepackage{subfiles}%bookeeping subfiles
+\usepackage{caption}%allows captions to work better
+\usepackage[labelformat=simple]{subcaption}
+\usepackage{chngcntr} %allows xwithin commands to change counters on stuff
+\usepackage[cm]{fullpage} %better formatting on a4
+\usepackage{hyperref} %clickable everything
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\usepackage{lipsum}  
+\usepackage{mdframed}
+
+\pagecolor{darkgray}
+\color{pink}
+
+\DeclareMathAlphabet{\oldcal}{OMS}{zplm}{m}{n} %oldmathcal
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+
+
+\renewcommand\thesubfigure{(\alph{subfigure})} %counts subfigures by letters
+
+\numberwithin{equation}{section} %counts eqns and figures within section.
+\counterwithin{figure}{section}
+
+
+
+
+
+%commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\HDash}{\dashrule{\linewidth}{0.5mm}}
+\newcommand{\optional}[1]{\textcolor{lime}{\textit{#1}} (\textbf{optional})}
+
+\newenvironment{recipe}[1][Dubious Food]
+    {\begin{center}%
+    \begin{tabular}{|p{0.8\textwidth}|}%
+    \hline\\[-3ex]
+    \begin{center}{\Large{#1}}\end{center}\\
+    \hline
+    \begin{itemize}%
+    }
+    { 
+    \end{itemize}%
+    \\\\\hline%
+    \end{tabular}%
+    \end{center}
+    }
+
+\title{Chicken Food Organisation :3}
+
+\begin{document}
+
+\maketitle
+
+\section{Chicken Shopping}
+\subsection{Item list}
+
+
+\subsection{Meals to shop for and their required ingredients}
+
+\begin{enumerate}[(i)]
+    \item \begin{recipe}[Stock]
+            \item colossal brown onion or two normal sizes
+            \item carrots x 2
+            \item celery x 2
+            \item whole head of garlic
+            \item mushroom stalks
+            \item shiitake mmushrooms 8--12 (dried)
+            \item hardy herbs in order of preference: thyme,rosemary,sage.
+            \item \optional{leek, tomatoes, fennel heads, parsley}
+        \end{recipe}
+    \item  \begin{recipe}[Chickenese]
+            \item Pasta, any kind (tagliatelle or conchiglie preferred)
+            \item Onion x 1
+            \item Carrot x 1
+            \item Celery x 1
+            \item Garlic x 1
+            \item Mushroom punnets x 2
+            \item tomato paste
+            \item herbs: chives, parsley, thyme all optional
+            \item stock: see stock recipe or buy veg stocks
+            \item tinned tomats x 2 (napolina/midrange pref, better tomats matter, but non-essential)
+            \item \optional{extra thing of mushrooms, you can buy fancy ones, and cook them with thyme and garlic. some kind of vegan/vege meatballs would also be suitable}
+    \end{recipe}
+    \item \begin{recipe}[Spinach and Feta Pie]
+        \item puff pastry (use filo for less shadowness)
+        \item onion
+        \item garlic
+        \item herbs: choose 3 of (ioop): parsley, thyme, dill, mint, tarragon. 
+        \item spinach x 1.5 bags (optional: 1 bag kale, 1 spinach)
+        \item feta x 1--2
+        \item sundrieries
+        \item \optional{pine nuts, walnuts will do for cost though}
+    \end{recipe}
+    \item \begin{recipe}
+        \item Onion
+        \item Carrot
+        \item celery
+        \item tinned tomatoe x2
+        \item stockpot or whatever
+        \item herbs (parsley, thyme best)
+        \item BLENDER
+    \end{recipe}
+
+\end{enumerate}
+
+
+\section{Life Projects}
+
+\subsection{Recipe Calculator}
+I would like to make a program that takes the ingredients that you currently have as input, and outputs the recipes you can make from those ingredients. It also tells you the ingredients that you will have left over after making the recipe.
+
+\end{document}
