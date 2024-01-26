@@ -45,21 +45,21 @@ def main():
 
     star_add_increment = 2000
     star_count = 0
-
+    star_num = 3
     stars = []
     hit = False
 
     while run:
         star_count += clock.tick(60)
         elapsed_time = time.time() - start_time
-
         if star_count > star_add_increment:
-            for _ in range(random.randint(2,7)):
+            for _ in range(random.randint(2,star_num)):
                 star_x = random.randint(0, WIDTH - STAR_WIDTH)
                 star = pygame.Rect(star_x, -STAR_HEIGHT, STAR_WIDTH, STAR_HEIGHT)
                 stars.append(star)
 
-            star_add_increment = max(200, star_add_increment - 50)
+            star_add_increment = max(400, star_add_increment*0.95)
+            star_num = min(star_num+random.randint(0,1),8)
             star_count = 0
 
         for event in pygame.event.get():
@@ -91,7 +91,7 @@ def main():
             pygame.display.update()
             pygame.time.delay(4000)
             break
-
+        
     pygame.quit()
 
 if __name__ == "__main__":
